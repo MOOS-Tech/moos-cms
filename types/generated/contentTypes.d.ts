@@ -677,6 +677,235 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::article.article', 'title'>;
+    content: Attribute.RichText;
+    excerpt: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCardViewCardView extends Schema.CollectionType {
+  collectionName: 'card_views';
+  info: {
+    singularName: 'card-view';
+    pluralName: 'card-views';
+    displayName: 'CardView';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    ImageUrl: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::card-view.card-view',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::card-view.card-view',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
+  collectionName: 'learn_more_cards';
+  info: {
+    singularName: 'learn-more-card';
+    pluralName: 'learn-more-cards';
+    displayName: 'Learn More Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    learn_more_card_arrays: Attribute.Relation<
+      'api::learn-more-card.learn-more-card',
+      'oneToMany',
+      'api::learn-more-card-array.learn-more-card-array'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learn-more-card.learn-more-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learn-more-card.learn-more-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearnMoreCardArrayLearnMoreCardArray
+  extends Schema.CollectionType {
+  collectionName: 'learn_more_card_arrays';
+  info: {
+    singularName: 'learn-more-card-array';
+    pluralName: 'learn-more-card-arrays';
+    displayName: 'learn more card array ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs: Attribute.String;
+    learn_more_card: Attribute.Relation<
+      'api::learn-more-card-array.learn-more-card-array',
+      'manyToOne',
+      'api::learn-more-card.learn-more-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learn-more-card-array.learn-more-card-array',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learn-more-card-array.learn-more-card-array',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::page.page', 'title'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiQuoteQuote extends Schema.CollectionType {
+  collectionName: 'quotes';
+  info: {
+    singularName: 'quote';
+    pluralName: 'quotes';
+    displayName: 'Quote';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Quote: Attribute.String & Attribute.Required;
+    Speaker: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::quote.quote',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::quote.quote',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTitleTitle extends Schema.CollectionType {
+  collectionName: 'titles';
+  info: {
+    singularName: 'title';
+    pluralName: 'titles';
+    displayName: 'Title';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CommonTitle: Attribute.String;
+    boldText: Attribute.String;
+    Paragraph: Attribute.String;
+    BelongTo: Attribute.String & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::title.title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::title.title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -693,6 +922,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::article.article': ApiArticleArticle;
+      'api::card-view.card-view': ApiCardViewCardView;
+      'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
+      'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
+      'api::page.page': ApiPagePage;
+      'api::quote.quote': ApiQuoteQuote;
+      'api::title.title': ApiTitleTitle;
     }
   }
 }
