@@ -872,6 +872,83 @@ export interface ApiQuoteQuote extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    boldtext: Attribute.String;
+    ComTitle: Attribute.String;
+    CardTitle: Attribute.String;
+    Paragraph: Attribute.Text;
+    imageUrl: Attribute.Media & Attribute.Required;
+    service_card_bodies: Attribute.Relation<
+      'api::service.service',
+      'oneToMany',
+      'api::service-card-body.service-card-body'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceCardBodyServiceCardBody
+  extends Schema.CollectionType {
+  collectionName: 'service_card_bodies';
+  info: {
+    singularName: 'service-card-body';
+    pluralName: 'service-card-bodies';
+    displayName: 'Service Card Body';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ListItems: Attribute.String;
+    service: Attribute.Relation<
+      'api::service-card-body.service-card-body',
+      'manyToOne',
+      'api::service.service'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-card-body.service-card-body',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-card-body.service-card-body',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTitleTitle extends Schema.CollectionType {
   collectionName: 'titles';
   info: {
@@ -928,6 +1005,8 @@ declare module '@strapi/types' {
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::page.page': ApiPagePage;
       'api::quote.quote': ApiQuoteQuote;
+      'api::service.service': ApiServiceService;
+      'api::service-card-body.service-card-body': ApiServiceCardBodyServiceCardBody;
       'api::title.title': ApiTitleTitle;
     }
   }

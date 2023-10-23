@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "boldtext": {
+      "type": "string"
+    },
+    "ComTitle": {
+      "type": "string"
+    },
+    "CardTitle": {
+      "type": "string"
+    },
+    "Paragraph": {
+      "type": "text"
+    },
+    "imageUrl": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "service_card_bodies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-card-body.service-card-body",
+      "mappedBy": "service"
+    }
+  }
+}
