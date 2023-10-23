@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_card_bodies",
+  "info": {
+    "singularName": "service-card-body",
+    "pluralName": "service-card-bodies",
+    "displayName": "Service Card Body",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ListItems": {
+      "type": "string"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "service_card_bodies"
+    }
+  }
+}

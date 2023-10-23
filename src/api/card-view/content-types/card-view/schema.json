@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "card_views",
+  "info": {
+    "singularName": "card-view",
+    "pluralName": "card-views",
+    "displayName": "CardView",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "ImageUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

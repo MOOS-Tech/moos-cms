@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learn_more_cards",
+  "info": {
+    "singularName": "learn-more-card",
+    "pluralName": "learn-more-cards",
+    "displayName": "Learn More Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "string"
+    },
+    "learn_more_card_arrays": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::learn-more-card-array.learn-more-card-array",
+      "mappedBy": "learn_more_card"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotes",
+  "info": {
+    "singularName": "quote",
+    "pluralName": "quotes",
+    "displayName": "Quote"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Quote": {
+      "type": "string",
+      "required": true
+    },
+    "Speaker": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
