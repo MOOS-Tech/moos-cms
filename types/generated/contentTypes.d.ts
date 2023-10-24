@@ -744,6 +744,37 @@ export interface ApiCardViewCardView extends Schema.CollectionType {
   };
 }
 
+export interface ApiImageImage extends Schema.CollectionType {
+  collectionName: 'images';
+  info: {
+    singularName: 'image';
+    pluralName: 'images';
+    displayName: 'image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    imageUrl: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::image.image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::image.image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
   collectionName: 'learn_more_cards';
   info: {
@@ -949,6 +980,43 @@ export interface ApiServiceCardBodyServiceCardBody
   };
 }
 
+export interface ApiTechnologyPageTechnologyPage extends Schema.CollectionType {
+  collectionName: 'technology_pages';
+  info: {
+    singularName: 'technology-page';
+    pluralName: 'technology-pages';
+    displayName: 'technology page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.String;
+    ImageUrl: Attribute.Media & Attribute.Required;
+    title: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToOne',
+      'api::title.title'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::technology-page.technology-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTitleTitle extends Schema.CollectionType {
   collectionName: 'titles';
   info: {
@@ -1001,12 +1069,14 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::card-view.card-view': ApiCardViewCardView;
+      'api::image.image': ApiImageImage;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::page.page': ApiPagePage;
       'api::quote.quote': ApiQuoteQuote;
       'api::service.service': ApiServiceService;
       'api::service-card-body.service-card-body': ApiServiceCardBodyServiceCardBody;
+      'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;
       'api::title.title': ApiTitleTitle;
     }
   }
