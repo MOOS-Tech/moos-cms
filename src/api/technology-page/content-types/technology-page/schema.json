@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technology_pages",
+  "info": {
+    "singularName": "technology-page",
+    "pluralName": "technology-pages",
+    "displayName": "technology page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "ImageUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::title.title"
+    }
+  }
+}
