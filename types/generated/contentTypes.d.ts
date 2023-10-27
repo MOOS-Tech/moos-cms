@@ -1081,6 +1081,39 @@ export interface ApiTechnologyPageTechnologyPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
+  extends Schema.CollectionType {
+  collectionName: 'technology_page_process_cards';
+  info: {
+    singularName: 'technology-page-process-card';
+    pluralName: 'technology-page-process-cards';
+    displayName: 'technology page process card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    sub_title: Attribute.String;
+    imageUrl: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::technology-page-process-card.technology-page-process-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::technology-page-process-card.technology-page-process-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTitleTitle extends Schema.CollectionType {
   collectionName: 'titles';
   info: {
@@ -1143,6 +1176,7 @@ declare module '@strapi/types' {
       'api::service.service': ApiServiceService;
       'api::service-card-body.service-card-body': ApiServiceCardBodyServiceCardBody;
       'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;
+      'api::technology-page-process-card.technology-page-process-card': ApiTechnologyPageProcessCardTechnologyPageProcessCard;
       'api::title.title': ApiTitleTitle;
     }
   }

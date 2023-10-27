@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technology_page_process_cards",
+  "info": {
+    "singularName": "technology-page-process-card",
+    "pluralName": "technology-page-process-cards",
+    "displayName": "technology page process card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
