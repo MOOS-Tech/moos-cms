@@ -4,8 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
-    "description": ""
+    "displayName": "Article"
   },
   "options": {
     "draftAndPublish": true
@@ -22,9 +21,6 @@
       "targetField": "title"
     },
     "content": {
-      "type": "richtext"
-    },
-    "excerpt": {
       "type": "richtext"
     }
   }
