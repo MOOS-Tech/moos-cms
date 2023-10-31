@@ -4,7 +4,8 @@
   "info": {
     "singularName": "quote",
     "pluralName": "quotes",
-    "displayName": "Quote"
+    "displayName": "HomePage_Quote",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
