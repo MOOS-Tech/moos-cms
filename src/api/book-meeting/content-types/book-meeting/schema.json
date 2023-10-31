@@ -4,7 +4,8 @@
   "info": {
     "singularName": "book-meeting",
     "pluralName": "book-meetings",
-    "displayName": "book_meeting"
+    "displayName": "Footer_book_meeting",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

@@ -683,7 +683,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'Article';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -692,7 +691,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::article.article', 'title'>;
     content: Attribute.RichText;
-    excerpt: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -716,7 +714,8 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   info: {
     singularName: 'book-meeting';
     pluralName: 'book-meetings';
-    displayName: 'book_meeting';
+    displayName: 'Footer_book_meeting';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -749,7 +748,7 @@ export interface ApiCardViewCardView extends Schema.CollectionType {
   info: {
     singularName: 'card-view';
     pluralName: 'card-views';
-    displayName: 'CardView';
+    displayName: 'HomePage_CardView';
     description: '';
   };
   options: {
@@ -782,7 +781,8 @@ export interface ApiImageImage extends Schema.CollectionType {
   info: {
     singularName: 'image';
     pluralName: 'images';
-    displayName: 'image';
+    displayName: 'common_image';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -813,7 +813,7 @@ export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
   info: {
     singularName: 'learn-more-card';
     pluralName: 'learn-more-cards';
-    displayName: 'Learn More Card';
+    displayName: 'HomePage_Learn More Card';
     description: '';
   };
   options: {
@@ -851,7 +851,8 @@ export interface ApiLearnMoreCardArrayLearnMoreCardArray
   info: {
     singularName: 'learn-more-card-array';
     pluralName: 'learn-more-card-arrays';
-    displayName: 'learn more card array ';
+    displayName: 'HomePage_learn more card array ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -886,7 +887,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   info: {
     singularName: 'page';
     pluralName: 'pages';
-    displayName: 'Page';
+    displayName: 'HomePage_Page';
     description: '';
   };
   options: {
@@ -910,7 +911,8 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
   info: {
     singularName: 'partner';
     pluralName: 'partners';
-    displayName: 'partner';
+    displayName: 'HomePage_partner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -941,7 +943,8 @@ export interface ApiQuoteQuote extends Schema.CollectionType {
   info: {
     singularName: 'quote';
     pluralName: 'quotes';
-    displayName: 'Quote';
+    displayName: 'HomePage_Quote';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -972,7 +975,7 @@ export interface ApiServiceService extends Schema.CollectionType {
   info: {
     singularName: 'service';
     pluralName: 'services';
-    displayName: 'Service';
+    displayName: 'ServicesPage_Service';
     description: '';
   };
   options: {
@@ -1087,7 +1090,8 @@ export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
   info: {
     singularName: 'technology-page-process-card';
     pluralName: 'technology-page-process-cards';
-    displayName: 'technology page process card';
+    displayName: 'TechnologyPage_process card';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1119,7 +1123,7 @@ export interface ApiTitleTitle extends Schema.CollectionType {
   info: {
     singularName: 'title';
     pluralName: 'titles';
-    displayName: 'Title';
+    displayName: 'Common_Title';
     description: '';
   };
   options: {

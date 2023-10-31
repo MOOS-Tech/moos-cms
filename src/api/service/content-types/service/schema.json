@@ -4,7 +4,7 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service",
+    "displayName": "ServicesPage_Service",
     "description": ""
   },
   "options": {
@@ -25,12 +25,12 @@
       "type": "text"
     },
     "imageUrl": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "service_card_bodies": {
       "type": "relation",
