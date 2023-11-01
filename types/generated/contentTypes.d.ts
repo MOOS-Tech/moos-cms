@@ -714,7 +714,7 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   info: {
     singularName: 'book-meeting';
     pluralName: 'book-meetings';
-    displayName: 'Footer_book_meeting';
+    displayName: 'Common_book_meeting';
     description: '';
   };
   options: {
@@ -769,6 +769,41 @@ export interface ApiCardViewCardView extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::card-view.card-view',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCommonJoinWithUsCommonJoinWithUs
+  extends Schema.CollectionType {
+  collectionName: 'common_join_with_uses';
+  info: {
+    singularName: 'common-join-with-us';
+    pluralName: 'common-join-with-uses';
+    displayName: 'Common_Join with us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    position: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    linkedIn_profile: Attribute.String & Attribute.Required;
+    upload_resume: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::common-join-with-us.common-join-with-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::common-join-with-us.common-join-with-us',
       'oneToOne',
       'admin::user'
     > &
@@ -875,6 +910,86 @@ export interface ApiLearnMoreCardArrayLearnMoreCardArray
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::learn-more-card-array.learn-more-card-array',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurCompanyPageTitleCardOurCompanyPageTitleCard
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_title_cards';
+  info: {
+    singularName: 'our-company-page-title-card';
+    pluralName: 'our-company-page-title-cards';
+    displayName: 'OurCompanyPage_Title card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_title: Attribute.String;
+    image_url: Attribute.Media;
+    common_title: Attribute.Relation<
+      'api::our-company-page-title-card.our-company-page-title-card',
+      'oneToOne',
+      'api::title.title'
+    >;
+    points: Attribute.Relation<
+      'api::our-company-page-title-card.our-company-page-title-card',
+      'oneToMany',
+      'api::our-company-page-title-point.our-company-page-title-point'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-title-card.our-company-page-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-title-card.our-company-page-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_title_points';
+  info: {
+    singularName: 'our-company-page-title-point';
+    pluralName: 'our-company-page-title-points';
+    displayName: 'OurCompanyPage_Title point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bullet_point: Attribute.String;
+    card: Attribute.Relation<
+      'api::our-company-page-title-point.our-company-page-title-point',
+      'manyToOne',
+      'api::our-company-page-title-card.our-company-page-title-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-title-point.our-company-page-title-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-title-point.our-company-page-title-point',
       'oneToOne',
       'admin::user'
     > &
@@ -1171,9 +1286,12 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::book-meeting.book-meeting': ApiBookMeetingBookMeeting;
       'api::card-view.card-view': ApiCardViewCardView;
+      'api::common-join-with-us.common-join-with-us': ApiCommonJoinWithUsCommonJoinWithUs;
       'api::image.image': ApiImageImage;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
+      'api::our-company-page-title-card.our-company-page-title-card': ApiOurCompanyPageTitleCardOurCompanyPageTitleCard;
+      'api::our-company-page-title-point.our-company-page-title-point': ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint;
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::quote.quote': ApiQuoteQuote;
