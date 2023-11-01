@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_company_page_job_vacancy_qualifications",
+  "info": {
+    "singularName": "our-company-page-job-vacancy-qualification",
+    "pluralName": "our-company-page-job-vacancy-qualifications",
+    "displayName": "OurCompanyPage_job vacancy qualification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "qualification": {
+      "type": "string",
+      "required": true
+    },
+    "vacancy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::our-company-page-job-vacancy.our-company-page-job-vacancy",
+      "inversedBy": "qualifications"
+    }
+  }
+}

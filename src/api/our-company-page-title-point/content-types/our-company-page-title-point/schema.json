@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_company_page_title_points",
+  "info": {
+    "singularName": "our-company-page-title-point",
+    "pluralName": "our-company-page-title-points",
+    "displayName": "OurCompanyPage_Title point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bullet_point": {
+      "type": "string"
+    },
+    "card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::our-company-page-title-card.our-company-page-title-card",
+      "inversedBy": "points"
+    }
+  }
+}

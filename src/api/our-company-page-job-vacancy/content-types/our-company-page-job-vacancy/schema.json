@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_company_page_job_vacancies",
+  "info": {
+    "singularName": "our-company-page-job-vacancy",
+    "pluralName": "our-company-page-job-vacancies",
+    "displayName": "OurCompanyPage_job vacancy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "job_title": {
+      "type": "string",
+      "required": true
+    },
+    "qualifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification",
+      "mappedBy": "vacancy"
+    }
+  }
+}

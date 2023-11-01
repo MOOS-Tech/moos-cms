@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_company_page_title_cards",
+  "info": {
+    "singularName": "our-company-page-title-card",
+    "pluralName": "our-company-page-title-cards",
+    "displayName": "OurCompanyPage_Title card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sub_title": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "common_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::title.title"
+    },
+    "points": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::our-company-page-title-point.our-company-page-title-point",
+      "mappedBy": "card"
+    }
+  }
+}
