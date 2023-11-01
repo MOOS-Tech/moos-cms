@@ -917,6 +917,80 @@ export interface ApiLearnMoreCardArrayLearnMoreCardArray
   };
 }
 
+export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_job_vacancies';
+  info: {
+    singularName: 'our-company-page-job-vacancy';
+    pluralName: 'our-company-page-job-vacancies';
+    displayName: 'OurCompanyPage_job vacancy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    job_title: Attribute.String & Attribute.Required;
+    qualifications: Attribute.Relation<
+      'api::our-company-page-job-vacancy.our-company-page-job-vacancy',
+      'oneToMany',
+      'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-job-vacancy.our-company-page-job-vacancy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-job-vacancy.our-company-page-job-vacancy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacancyQualification
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_job_vacancy_qualifications';
+  info: {
+    singularName: 'our-company-page-job-vacancy-qualification';
+    pluralName: 'our-company-page-job-vacancy-qualifications';
+    displayName: 'OurCompanyPage_job vacancy qualification';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    qualification: Attribute.String & Attribute.Required;
+    vacancy: Attribute.Relation<
+      'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification',
+      'manyToOne',
+      'api::our-company-page-job-vacancy.our-company-page-job-vacancy'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOurCompanyPageTitleCardOurCompanyPageTitleCard
   extends Schema.CollectionType {
   collectionName: 'our_company_page_title_cards';
@@ -1290,6 +1364,8 @@ declare module '@strapi/types' {
       'api::image.image': ApiImageImage;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
+      'api::our-company-page-job-vacancy.our-company-page-job-vacancy': ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy;
+      'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification': ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacancyQualification;
       'api::our-company-page-title-card.our-company-page-title-card': ApiOurCompanyPageTitleCardOurCompanyPageTitleCard;
       'api::our-company-page-title-point.our-company-page-title-point': ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint;
       'api::page.page': ApiPagePage;
