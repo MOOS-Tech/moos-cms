@@ -992,6 +992,41 @@ export interface ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacanc
   };
 }
 
+export interface ApiOurCompanyPageMeetOurTeamOurCompanyPageMeetOurTeam
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_meet_our_teams';
+  info: {
+    singularName: 'our-company-page-meet-our-team';
+    pluralName: 'our-company-page-meet-our-teams';
+    displayName: '5.3_ourCompany / MeetOurTeam';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    LinkedIn: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-meet-our-team.our-company-page-meet-our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-meet-our-team.our-company-page-meet-our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOurCompanyPageTitleCardOurCompanyPageTitleCard
   extends Schema.CollectionType {
   collectionName: 'our_company_page_title_cards';
@@ -1367,6 +1402,7 @@ declare module '@strapi/types' {
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::our-company-page-job-vacancy.our-company-page-job-vacancy': ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy;
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification': ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacancyQualification;
+      'api::our-company-page-meet-our-team.our-company-page-meet-our-team': ApiOurCompanyPageMeetOurTeamOurCompanyPageMeetOurTeam;
       'api::our-company-page-title-card.our-company-page-title-card': ApiOurCompanyPageTitleCardOurCompanyPageTitleCard;
       'api::our-company-page-title-point.our-company-page-title-point': ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint;
       'api::page.page': ApiPagePage;
