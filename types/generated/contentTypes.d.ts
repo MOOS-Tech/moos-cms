@@ -714,7 +714,7 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   info: {
     singularName: 'book-meeting';
     pluralName: 'book-meetings';
-    displayName: 'Common_book_meeting';
+    displayName: '0_ common / BookMeeting';
     description: '';
   };
   options: {
@@ -748,7 +748,7 @@ export interface ApiCardViewCardView extends Schema.CollectionType {
   info: {
     singularName: 'card-view';
     pluralName: 'card-views';
-    displayName: 'HomePage_CardView';
+    displayName: '1.5_home / CardView';
     description: '';
   };
   options: {
@@ -782,7 +782,8 @@ export interface ApiCommonJoinWithUsCommonJoinWithUs
   info: {
     singularName: 'common-join-with-us';
     pluralName: 'common-join-with-uses';
-    displayName: 'Common_Join with us';
+    displayName: '0_ common / JoinWithUs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -816,7 +817,7 @@ export interface ApiImageImage extends Schema.CollectionType {
   info: {
     singularName: 'image';
     pluralName: 'images';
-    displayName: 'common_image';
+    displayName: '1.1_ home / Image';
     description: '';
   };
   options: {
@@ -848,7 +849,7 @@ export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
   info: {
     singularName: 'learn-more-card';
     pluralName: 'learn-more-cards';
-    displayName: 'HomePage_Learn More Card';
+    displayName: '1.2_home / LearnMoreCard';
     description: '';
   };
   options: {
@@ -886,7 +887,7 @@ export interface ApiLearnMoreCardArrayLearnMoreCardArray
   info: {
     singularName: 'learn-more-card-array';
     pluralName: 'learn-more-card-arrays';
-    displayName: 'HomePage_learn more card array ';
+    displayName: '1.2.1_home / LearnMoreCard / Array ';
     description: '';
   };
   options: {
@@ -923,7 +924,7 @@ export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
   info: {
     singularName: 'our-company-page-job-vacancy';
     pluralName: 'our-company-page-job-vacancies';
-    displayName: 'OurCompanyPage_job vacancy';
+    displayName: '5.2_ourCompany / JobVacancy';
     description: '';
   };
   options: {
@@ -960,7 +961,7 @@ export interface ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacanc
   info: {
     singularName: 'our-company-page-job-vacancy-qualification';
     pluralName: 'our-company-page-job-vacancy-qualifications';
-    displayName: 'OurCompanyPage_job vacancy qualification';
+    displayName: '5.2.1_ourCompany / JobVacancy / Qualification';
     description: '';
   };
   options: {
@@ -997,7 +998,7 @@ export interface ApiOurCompanyPageTitleCardOurCompanyPageTitleCard
   info: {
     singularName: 'our-company-page-title-card';
     pluralName: 'our-company-page-title-cards';
-    displayName: 'OurCompanyPage_Title card';
+    displayName: '5.1_ourCompany / Title';
     description: '';
   };
   options: {
@@ -1040,7 +1041,7 @@ export interface ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint
   info: {
     singularName: 'our-company-page-title-point';
     pluralName: 'our-company-page-title-points';
-    displayName: 'OurCompanyPage_Title point';
+    displayName: '5.1.1_ourCompany / Title / Point';
     description: '';
   };
   options: {
@@ -1100,7 +1101,7 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
   info: {
     singularName: 'partner';
     pluralName: 'partners';
-    displayName: 'HomePage_partner';
+    displayName: '1.3_home / Partner';
     description: '';
   };
   options: {
@@ -1132,7 +1133,7 @@ export interface ApiQuoteQuote extends Schema.CollectionType {
   info: {
     singularName: 'quote';
     pluralName: 'quotes';
-    displayName: 'HomePage_Quote';
+    displayName: '1.4_home / Quote';
     description: '';
   };
   options: {
@@ -1164,7 +1165,7 @@ export interface ApiServiceService extends Schema.CollectionType {
   info: {
     singularName: 'service';
     pluralName: 'services';
-    displayName: 'ServicesPage_Service';
+    displayName: '2.1_services / Service';
     description: '';
   };
   options: {
@@ -1205,7 +1206,7 @@ export interface ApiServiceCardBodyServiceCardBody
   info: {
     singularName: 'service-card-body';
     pluralName: 'service-card-bodies';
-    displayName: 'Service Card Body';
+    displayName: '2.1.1_service / CardBody';
     description: '';
   };
   options: {
@@ -1241,7 +1242,7 @@ export interface ApiTechnologyPageTechnologyPage extends Schema.CollectionType {
   info: {
     singularName: 'technology-page';
     pluralName: 'technology-pages';
-    displayName: 'technology page';
+    displayName: '4.1_technology / Title';
     description: '';
   };
   options: {
@@ -1279,7 +1280,7 @@ export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
   info: {
     singularName: 'technology-page-process-card';
     pluralName: 'technology-page-process-cards';
-    displayName: 'TechnologyPage_process card';
+    displayName: '4.2_technology / ProcessCard';
     description: '';
   };
   options: {
@@ -1312,7 +1313,7 @@ export interface ApiTitleTitle extends Schema.CollectionType {
   info: {
     singularName: 'title';
     pluralName: 'titles';
-    displayName: 'Common_Title';
+    displayName: '0_ common / Title';
     description: '';
   };
   options: {
