@@ -924,7 +924,7 @@ export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
   info: {
     singularName: 'our-company-page-job-vacancy';
     pluralName: 'our-company-page-job-vacancies';
-    displayName: '5.2_ourCompany / JobVacancy';
+    displayName: '7.2_ourCompany / JobVacancy';
     description: '';
   };
   options: {
@@ -961,7 +961,7 @@ export interface ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacanc
   info: {
     singularName: 'our-company-page-job-vacancy-qualification';
     pluralName: 'our-company-page-job-vacancy-qualifications';
-    displayName: '5.2.1_ourCompany / JobVacancy / Qualification';
+    displayName: '7.2.1_ourCompany / JobVacancy / Qualification';
     description: '';
   };
   options: {
@@ -998,7 +998,7 @@ export interface ApiOurCompanyPageMeetOurTeamOurCompanyPageMeetOurTeam
   info: {
     singularName: 'our-company-page-meet-our-team';
     pluralName: 'our-company-page-meet-our-teams';
-    displayName: '5.3_ourCompany / MeetOurTeam';
+    displayName: '7.3_ourCompany / MeetOurTeam';
     description: '';
   };
   options: {
@@ -1033,7 +1033,7 @@ export interface ApiOurCompanyPageTitleCardOurCompanyPageTitleCard
   info: {
     singularName: 'our-company-page-title-card';
     pluralName: 'our-company-page-title-cards';
-    displayName: '5.1_ourCompany / Title';
+    displayName: '7.1_ourCompany / Title';
     description: '';
   };
   options: {
@@ -1076,7 +1076,7 @@ export interface ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint
   info: {
     singularName: 'our-company-page-title-point';
     pluralName: 'our-company-page-title-points';
-    displayName: '5.1.1_ourCompany / Title / Point';
+    displayName: '7.1.1_ourCompany / Title / Point';
     description: '';
   };
   options: {
@@ -1277,7 +1277,7 @@ export interface ApiTechnologyPageTechnologyPage extends Schema.CollectionType {
   info: {
     singularName: 'technology-page';
     pluralName: 'technology-pages';
-    displayName: '4.1_technology / Title';
+    displayName: '6.1_technology / Title';
     description: '';
   };
   options: {
@@ -1315,7 +1315,7 @@ export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
   info: {
     singularName: 'technology-page-process-card';
     pluralName: 'technology-page-process-cards';
-    displayName: '4.2_technology / ProcessCard';
+    displayName: '6.2_technology / ProcessCard';
     description: '';
   };
   options: {
