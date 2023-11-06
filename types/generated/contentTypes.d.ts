@@ -743,6 +743,121 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   };
 }
 
+export interface ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted
+  extends Schema.CollectionType {
+  collectionName: 'business_page_umnamage_retail_get_starteds';
+  info: {
+    singularName: 'business-page-umnamage-retail-get-started';
+    pluralName: 'business-page-umnamage-retail-get-starteds';
+    displayName: '3.3_business / umnamageRetail  / getStarted';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    number: Attribute.Integer & Attribute.Required;
+    Paragraph: Attribute.Text & Attribute.Required;
+    BelongTo: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetailTitleCard
+  extends Schema.CollectionType {
+  collectionName: 'business_page_unmanage_retail_title_cards';
+  info: {
+    singularName: 'business-page-unmanage-retail-title-card';
+    pluralName: 'business-page-unmanage-retail-title-cards';
+    displayName: '3.1_business / unmanageRetail / titleCard';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_topic: Attribute.String;
+    main_title: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'manyToOne',
+      'api::title.title'
+    >;
+    points: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToMany',
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point'
+    >;
+    image_url: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint
+  extends Schema.CollectionType {
+  collectionName: 'businesspage_umnamage_retail_titlecard_points';
+  info: {
+    singularName: 'businesspage-umnamage-retail-titlecard-point';
+    pluralName: 'businesspage-umnamage-retail-titlecard-points';
+    displayName: '3.1.1_business / umnamageRetail / Titlecard / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    point: Attribute.String & Attribute.Required;
+    card: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'manyToOne',
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCardViewCardView extends Schema.CollectionType {
   collectionName: 'card_views';
   info: {
@@ -1359,6 +1474,11 @@ export interface ApiTitleTitle extends Schema.CollectionType {
     boldText: Attribute.String;
     Paragraph: Attribute.String;
     BelongTo: Attribute.String & Attribute.Required & Attribute.Unique;
+    business_page_unmanage_retail_title_cards: Attribute.Relation<
+      'api::title.title',
+      'oneToMany',
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1395,6 +1515,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::book-meeting.book-meeting': ApiBookMeetingBookMeeting;
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started': ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted;
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card': ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetailTitleCard;
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point': ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint;
       'api::card-view.card-view': ApiCardViewCardView;
       'api::common-join-with-us.common-join-with-us': ApiCommonJoinWithUsCommonJoinWithUs;
       'api::image.image': ApiImageImage;

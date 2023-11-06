@@ -26,6 +26,12 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "business_page_unmanage_retail_title_cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card",
+      "mappedBy": "main_title"
     }
   }
 }

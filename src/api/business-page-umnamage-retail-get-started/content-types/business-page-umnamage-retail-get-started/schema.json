@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_page_umnamage_retail_get_starteds",
+  "info": {
+    "singularName": "business-page-umnamage-retail-get-started",
+    "pluralName": "business-page-umnamage-retail-get-starteds",
+    "displayName": "3.3_business / umnamageRetail  / getStarted",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "Paragraph": {
+      "type": "text",
+      "required": true
+    },
+    "BelongTo": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
