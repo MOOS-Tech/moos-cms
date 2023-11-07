@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bp_warehousing_ops_flowchart_moosways",
+  "info": {
+    "singularName": "bp-warehousing-ops-flowchart-moosway",
+    "pluralName": "bp-warehousing-ops-flowchart-moosways",
+    "displayName": "4.2.1_business / Warehousing_Ops / flowchart / moosway",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "moosway": {
+      "type": "string"
+    },
+    "flowchart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart",
+      "inversedBy": "moosways"
+    }
+  }
+}

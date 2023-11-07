@@ -743,6 +743,432 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   };
 }
 
+export interface ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation
+  extends Schema.CollectionType {
+  collectionName: 'bp_multiple_stock_keeping_locations';
+  info: {
+    singularName: 'bp-multiple-stock-keeping-location';
+    pluralName: 'bp-multiple-stock-keeping-locations';
+    displayName: '5.2_business / MultipleStockKeepingLocation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_title: Attribute.String & Attribute.Required;
+    moosways: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location',
+      'oneToMany',
+      'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway'
+    >;
+    oldways: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location',
+      'oneToMany',
+      'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpMultipleStockKeepingLocationMooswayBpMultipleStockKeepingLocationMoosway
+  extends Schema.CollectionType {
+  collectionName: 'bp_multiple_stock_keeping_location_moosways';
+  info: {
+    singularName: 'bp-multiple-stock-keeping-location-moosway';
+    pluralName: 'bp-multiple-stock-keeping-location-moosways';
+    displayName: '5.2.1_business / MultipleStockKeepingLocation / moosway';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    moosway: Attribute.String & Attribute.Required;
+    bp_location: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway',
+      'manyToOne',
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpMultipleStockKeepingLocationOldwayBpMultipleStockKeepingLocationOldway
+  extends Schema.CollectionType {
+  collectionName: 'bp_multiple_stock_keeping_location_oldways';
+  info: {
+    singularName: 'bp-multiple-stock-keeping-location-oldway';
+    pluralName: 'bp-multiple-stock-keeping-location-oldways';
+    displayName: '5.2.2_business / MultipleStockKeepingLocation / oldway';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    oldway: Attribute.String;
+    bp_location: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway',
+      'manyToOne',
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpUnmanagedFlowchartBpUnmanagedFlowchart
+  extends Schema.CollectionType {
+  collectionName: 'bp_unmanaged_flowcharts';
+  info: {
+    singularName: 'bp-unmanaged-flowchart';
+    pluralName: 'bp-unmanaged-flowcharts';
+    displayName: '3.2_business / unmanageRetail / flowchart';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_title: Attribute.String & Attribute.Required;
+    moosways: Attribute.Relation<
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart',
+      'oneToMany',
+      'api::moosway.moosway'
+    >;
+    oldways: Attribute.Relation<
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart',
+      'oneToMany',
+      'api::oldway.oldway'
+    >;
+    pill_image: Attribute.Media;
+    percentage: Attribute.String;
+    percentage_description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpWarehousingOpsFlowchartBpWarehousingOpsFlowchart
+  extends Schema.CollectionType {
+  collectionName: 'bp_warehousing_ops_flowcharts';
+  info: {
+    singularName: 'bp-warehousing-ops-flowchart';
+    pluralName: 'bp-warehousing-ops-flowcharts';
+    displayName: '4.2_business / Warehousing_Ops / flowchart';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_title: Attribute.String & Attribute.Required;
+    moosways: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart',
+      'oneToMany',
+      'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway'
+    >;
+    oldways: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart',
+      'oneToMany',
+      'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway'
+    >;
+    pill_image: Attribute.Media;
+    percentage: Attribute.String;
+    percentage_description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpWarehousingOpsFlowchartMooswayBpWarehousingOpsFlowchartMoosway
+  extends Schema.CollectionType {
+  collectionName: 'bp_warehousing_ops_flowchart_moosways';
+  info: {
+    singularName: 'bp-warehousing-ops-flowchart-moosway';
+    pluralName: 'bp-warehousing-ops-flowchart-moosways';
+    displayName: '4.2.1_business / Warehousing_Ops / flowchart / moosway';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    moosway: Attribute.String;
+    flowchart: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway',
+      'manyToOne',
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBpWarehousingOpsFlowchartOldwayBpWarehousingOpsFlowchartOldway
+  extends Schema.CollectionType {
+  collectionName: 'bp_warehousing_ops_flowchart_oldways';
+  info: {
+    singularName: 'bp-warehousing-ops-flowchart-oldway';
+    pluralName: 'bp-warehousing-ops-flowchart-oldways';
+    displayName: '4.2.2_business / Warehousing_Ops / flowchart / oldway';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    old_way: Attribute.String;
+    flowchart: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway',
+      'manyToOne',
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinessPageTitleBusinessPageTitle
+  extends Schema.CollectionType {
+  collectionName: 'business_page_titles';
+  info: {
+    singularName: 'business-page-title';
+    pluralName: 'business-page-titles';
+    displayName: '3.0_business / flowcharts / Title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-page-title.business-page-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-page-title.business-page-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted
+  extends Schema.CollectionType {
+  collectionName: 'business_page_umnamage_retail_get_starteds';
+  info: {
+    singularName: 'business-page-umnamage-retail-get-started';
+    pluralName: 'business-page-umnamage-retail-get-starteds';
+    displayName: '3.3_business / umnamageRetail  / getStarted';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    number: Attribute.Integer & Attribute.Required;
+    Paragraph: Attribute.Text & Attribute.Required;
+    BelongTo: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetailTitleCard
+  extends Schema.CollectionType {
+  collectionName: 'business_page_unmanage_retail_title_cards';
+  info: {
+    singularName: 'business-page-unmanage-retail-title-card';
+    pluralName: 'business-page-unmanage-retail-title-cards';
+    displayName: '3.1_business / unmanageRetail / titleCard';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_topic: Attribute.String;
+    main_title: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'manyToOne',
+      'api::title.title'
+    >;
+    points: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToMany',
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point'
+    >;
+    image_url: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint
+  extends Schema.CollectionType {
+  collectionName: 'businesspage_umnamage_retail_titlecard_points';
+  info: {
+    singularName: 'businesspage-umnamage-retail-titlecard-point';
+    pluralName: 'businesspage-umnamage-retail-titlecard-points';
+    displayName: '3.1.1_business / umnamageRetail / Titlecard / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    point: Attribute.String & Attribute.Required;
+    card: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'manyToOne',
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCardViewCardView extends Schema.CollectionType {
   collectionName: 'card_views';
   info: {
@@ -857,7 +1283,7 @@ export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    description: Attribute.String;
+    description: Attribute.Text;
     learn_more_card_arrays: Attribute.Relation<
       'api::learn-more-card.learn-more-card',
       'oneToMany',
@@ -911,6 +1337,78 @@ export interface ApiLearnMoreCardArrayLearnMoreCardArray
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::learn-more-card-array.learn-more-card-array',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMooswayMoosway extends Schema.CollectionType {
+  collectionName: 'moosways';
+  info: {
+    singularName: 'moosway';
+    pluralName: 'moosways';
+    displayName: '3.2.1 business / unmanageRetail / flowchart / moosway / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    moosway_point: Attribute.String & Attribute.Required;
+    bp_unmanaged_flowchart: Attribute.Relation<
+      'api::moosway.moosway',
+      'manyToOne',
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::moosway.moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::moosway.moosway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOldwayOldway extends Schema.CollectionType {
+  collectionName: 'oldways';
+  info: {
+    singularName: 'oldway';
+    pluralName: 'oldways';
+    displayName: '3.2.2_business / unmanageRetail / flowchart / oldway / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    old_way_point: Attribute.String & Attribute.Required;
+    bp_unmanaged_flowchart: Attribute.Relation<
+      'api::oldway.oldway',
+      'manyToOne',
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::oldway.oldway',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::oldway.oldway',
       'oneToOne',
       'admin::user'
     > &
@@ -1359,6 +1857,11 @@ export interface ApiTitleTitle extends Schema.CollectionType {
     boldText: Attribute.String;
     Paragraph: Attribute.String;
     BelongTo: Attribute.String & Attribute.Required & Attribute.Unique;
+    business_page_unmanage_retail_title_cards: Attribute.Relation<
+      'api::title.title',
+      'oneToMany',
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1395,11 +1898,24 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::book-meeting.book-meeting': ApiBookMeetingBookMeeting;
+      'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location': ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation;
+      'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway': ApiBpMultipleStockKeepingLocationMooswayBpMultipleStockKeepingLocationMoosway;
+      'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway': ApiBpMultipleStockKeepingLocationOldwayBpMultipleStockKeepingLocationOldway;
+      'api::bp-unmanaged-flowchart.bp-unmanaged-flowchart': ApiBpUnmanagedFlowchartBpUnmanagedFlowchart;
+      'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart': ApiBpWarehousingOpsFlowchartBpWarehousingOpsFlowchart;
+      'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway': ApiBpWarehousingOpsFlowchartMooswayBpWarehousingOpsFlowchartMoosway;
+      'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway': ApiBpWarehousingOpsFlowchartOldwayBpWarehousingOpsFlowchartOldway;
+      'api::business-page-title.business-page-title': ApiBusinessPageTitleBusinessPageTitle;
+      'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started': ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted;
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card': ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetailTitleCard;
+      'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point': ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint;
       'api::card-view.card-view': ApiCardViewCardView;
       'api::common-join-with-us.common-join-with-us': ApiCommonJoinWithUsCommonJoinWithUs;
       'api::image.image': ApiImageImage;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
+      'api::moosway.moosway': ApiMooswayMoosway;
+      'api::oldway.oldway': ApiOldwayOldway;
       'api::our-company-page-job-vacancy.our-company-page-job-vacancy': ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy;
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification': ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacancyQualification;
       'api::our-company-page-meet-our-team.our-company-page-meet-our-team': ApiOurCompanyPageMeetOurTeamOurCompanyPageMeetOurTeam;

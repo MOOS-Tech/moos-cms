@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bp_multiple_stock_keeping_locations",
+  "info": {
+    "singularName": "bp-multiple-stock-keeping-location",
+    "pluralName": "bp-multiple-stock-keeping-locations",
+    "displayName": "5.2_business / MultipleStockKeepingLocation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_title": {
+      "type": "string",
+      "required": true
+    },
+    "moosways": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway",
+      "mappedBy": "bp_location"
+    },
+    "oldways": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway",
+      "mappedBy": "bp_location"
+    }
+  }
+}

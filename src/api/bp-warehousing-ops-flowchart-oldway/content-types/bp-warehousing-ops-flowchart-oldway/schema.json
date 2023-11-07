@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bp_warehousing_ops_flowchart_oldways",
+  "info": {
+    "singularName": "bp-warehousing-ops-flowchart-oldway",
+    "pluralName": "bp-warehousing-ops-flowchart-oldways",
+    "displayName": "4.2.2_business / Warehousing_Ops / flowchart / oldway",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "old_way": {
+      "type": "string"
+    },
+    "flowchart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart",
+      "inversedBy": "oldways"
+    }
+  }
+}

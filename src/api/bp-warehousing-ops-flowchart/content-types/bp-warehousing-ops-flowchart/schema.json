@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bp_warehousing_ops_flowcharts",
+  "info": {
+    "singularName": "bp-warehousing-ops-flowchart",
+    "pluralName": "bp-warehousing-ops-flowcharts",
+    "displayName": "4.2_business / Warehousing_Ops / flowchart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_title": {
+      "type": "string",
+      "required": true
+    },
+    "moosways": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway",
+      "mappedBy": "flowchart"
+    },
+    "oldways": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway",
+      "mappedBy": "flowchart"
+    },
+    "pill_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "percentage": {
+      "type": "string"
+    },
+    "percentage_description": {
+      "type": "string"
+    }
+  }
+}
