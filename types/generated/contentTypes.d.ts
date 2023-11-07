@@ -1435,6 +1435,7 @@ export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
       'oneToMany',
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification'
     >;
+    link: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
