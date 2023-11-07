@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "moosways",
+  "info": {
+    "singularName": "moosway",
+    "pluralName": "moosways",
+    "displayName": "3.2.1 business / unmanageRetail / flowchart / moosway / point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "moosway_point": {
+      "type": "string",
+      "required": true
+    },
+    "bp_unmanaged_flowchart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bp-unmanaged-flowchart.bp-unmanaged-flowchart",
+      "inversedBy": "moosways"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bp_multiple_stock_keeping_location_oldways",
+  "info": {
+    "singularName": "bp-multiple-stock-keeping-location-oldway",
+    "pluralName": "bp-multiple-stock-keeping-location-oldways",
+    "displayName": "5.2.2_business / MultipleStockKeepingLocation / oldway",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "oldway": {
+      "type": "string"
+    },
+    "bp_location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location",
+      "inversedBy": "oldways"
+    }
+  }
+}

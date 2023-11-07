@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "oldways",
+  "info": {
+    "singularName": "oldway",
+    "pluralName": "oldways",
+    "displayName": "3.2.2_business / unmanageRetail / flowchart / oldway / point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "old_way_point": {
+      "type": "string",
+      "required": true
+    },
+    "bp_unmanaged_flowchart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bp-unmanaged-flowchart.bp-unmanaged-flowchart",
+      "inversedBy": "oldways"
+    }
+  }
+}
