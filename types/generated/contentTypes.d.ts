@@ -1821,7 +1821,7 @@ export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
   };
   attributes: {
     title: Attribute.String;
-    sub_title: Attribute.String;
+    sub_title: Attribute.Text;
     imageUrl: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

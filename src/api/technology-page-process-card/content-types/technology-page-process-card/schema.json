@@ -16,7 +16,7 @@
       "type": "string"
     },
     "sub_title": {
-      "type": "string"
+      "type": "text"
     },
     "imageUrl": {
       "type": "media",
