@@ -21,6 +21,9 @@
       "relation": "oneToMany",
       "target": "api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification",
       "mappedBy": "vacancy"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
