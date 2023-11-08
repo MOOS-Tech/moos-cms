@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "0_comon / navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nav_title": {
+      "type": "string"
+    },
+    "navbar_sub_topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navbar-sub-topic.navbar-sub-topic",
+      "mappedBy": "navbar"
+    }
+  }
+}

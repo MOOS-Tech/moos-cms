@@ -1380,6 +1380,79 @@ export interface ApiMooswayMoosway extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.CollectionType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: '0_comon / navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nav_title: Attribute.String;
+    navbar_sub_topics: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToMany',
+      'api::navbar-sub-topic.navbar-sub-topic'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavbarSubTopicNavbarSubTopic extends Schema.CollectionType {
+  collectionName: 'navbar_sub_topics';
+  info: {
+    singularName: 'navbar-sub-topic';
+    pluralName: 'navbar-sub-topics';
+    displayName: '0_comon / navbar / subTopic';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_topics: Attribute.String;
+    navbar: Attribute.Relation<
+      'api::navbar-sub-topic.navbar-sub-topic',
+      'manyToOne',
+      'api::navbar.navbar'
+    >;
+    icon: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar-sub-topic.navbar-sub-topic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar-sub-topic.navbar-sub-topic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOldwayOldway extends Schema.CollectionType {
   collectionName: 'oldways';
   info: {
@@ -1916,6 +1989,8 @@ declare module '@strapi/types' {
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::moosway.moosway': ApiMooswayMoosway;
+      'api::navbar.navbar': ApiNavbarNavbar;
+      'api::navbar-sub-topic.navbar-sub-topic': ApiNavbarSubTopicNavbarSubTopic;
       'api::oldway.oldway': ApiOldwayOldway;
       'api::our-company-page-job-vacancy.our-company-page-job-vacancy': ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy;
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification': ApiOurCompanyPageJobVacancyQualificationOurCompanyPageJobVacancyQualification;
