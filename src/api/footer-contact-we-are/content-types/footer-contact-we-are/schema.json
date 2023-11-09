@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_contact_we_ares",
+  "info": {
+    "singularName": "footer-contact-we-are",
+    "pluralName": "footer-contact-we-ares",
+    "displayName": "0.2.5_Common / footer / contact / weAre",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "footer_contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::footer-contact.footer-contact",
+      "inversedBy": "WEARE_MOOS"
+    }
+  }
+}

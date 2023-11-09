@@ -1238,6 +1238,211 @@ export interface ApiCommonJoinWithUsCommonJoinWithUs
   };
 }
 
+export interface ApiFooterFooter extends Schema.CollectionType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: '0.2.1_common / footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    footer_term_and_conditions: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::footer-term-and-condition.footer-term-and-condition'
+    >;
+    footer_pages: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::footer-page.footer-page'
+    >;
+    footer_contacts: Attribute.Relation<
+      'api::footer.footer',
+      'oneToMany',
+      'api::footer-contact.footer-contact'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterContactFooterContact extends Schema.CollectionType {
+  collectionName: 'footer_contacts';
+  info: {
+    singularName: 'footer-contact';
+    pluralName: 'footer-contacts';
+    displayName: '0.2.4_common / footer / contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Attribute.Text;
+    telephone_number: Attribute.String;
+    email: Attribute.Email;
+    copyright: Attribute.String;
+    phone_icon: Attribute.Media;
+    email_icon: Attribute.Media;
+    copyright_icon: Attribute.Media;
+    WEARE_MOOS: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'oneToMany',
+      'api::footer-contact-we-are.footer-contact-we-are'
+    >;
+    footer: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'manyToOne',
+      'api::footer.footer'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-contact.footer-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterContactWeAreFooterContactWeAre
+  extends Schema.CollectionType {
+  collectionName: 'footer_contact_we_ares';
+  info: {
+    singularName: 'footer-contact-we-are';
+    pluralName: 'footer-contact-we-ares';
+    displayName: '0.2.5_Common / footer / contact / weAre';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Attribute.Media;
+    link: Attribute.String;
+    footer_contact: Attribute.Relation<
+      'api::footer-contact-we-are.footer-contact-we-are',
+      'manyToOne',
+      'api::footer-contact.footer-contact'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-contact-we-are.footer-contact-we-are',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-contact-we-are.footer-contact-we-are',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterPageFooterPage extends Schema.CollectionType {
+  collectionName: 'footer_pages';
+  info: {
+    singularName: 'footer-page';
+    pluralName: 'footer-pages';
+    displayName: '0.2.3_Common / footer / page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    page: Attribute.String;
+    footer: Attribute.Relation<
+      'api::footer-page.footer-page',
+      'manyToOne',
+      'api::footer.footer'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-page.footer-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-page.footer-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterTermAndConditionFooterTermAndCondition
+  extends Schema.CollectionType {
+  collectionName: 'footer_term_and_conditions';
+  info: {
+    singularName: 'footer-term-and-condition';
+    pluralName: 'footer-term-and-conditions';
+    displayName: '0.2.2_Common / footer / termAndCondition ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    footer: Attribute.Relation<
+      'api::footer-term-and-condition.footer-term-and-condition',
+      'manyToOne',
+      'api::footer.footer'
+    >;
+    name: Attribute.String;
+    url_link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-term-and-condition.footer-term-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-term-and-condition.footer-term-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiImageImage extends Schema.CollectionType {
   collectionName: 'images';
   info: {
@@ -1985,6 +2190,11 @@ declare module '@strapi/types' {
       'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point': ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint;
       'api::card-view.card-view': ApiCardViewCardView;
       'api::common-join-with-us.common-join-with-us': ApiCommonJoinWithUsCommonJoinWithUs;
+      'api::footer.footer': ApiFooterFooter;
+      'api::footer-contact.footer-contact': ApiFooterContactFooterContact;
+      'api::footer-contact-we-are.footer-contact-we-are': ApiFooterContactWeAreFooterContactWeAre;
+      'api::footer-page.footer-page': ApiFooterPageFooterPage;
+      'api::footer-term-and-condition.footer-term-and-condition': ApiFooterTermAndConditionFooterTermAndCondition;
       'api::image.image': ApiImageImage;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
