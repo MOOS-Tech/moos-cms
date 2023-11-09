@@ -767,6 +767,9 @@ export interface ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation
       'oneToMany',
       'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway'
     >;
+    pill_image: Attribute.Media;
+    percentage: Attribute.String;
+    percentage_description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
