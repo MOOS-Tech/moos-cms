@@ -24,30 +24,6 @@
     "copyright": {
       "type": "string"
     },
-    "phone_icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "email_icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "copyright_icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "WEARE_MOOS": {
       "type": "relation",
       "relation": "oneToMany",
@@ -59,6 +35,15 @@
       "relation": "manyToOne",
       "target": "api::footer.footer",
       "inversedBy": "footer_contacts"
+    },
+    "fontawsome_phone_icon_name": {
+      "type": "string"
+    },
+    "fontawsome_email_icon_name": {
+      "type": "string"
+    },
+    "fontawsome_copyright_icon_name": {
+      "type": "string"
     }
   }
 }

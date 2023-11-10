@@ -1338,9 +1338,6 @@ export interface ApiFooterContactFooterContact extends Schema.CollectionType {
     telephone_number: Attribute.String;
     email: Attribute.Email;
     copyright: Attribute.String;
-    phone_icon: Attribute.Media;
-    email_icon: Attribute.Media;
-    copyright_icon: Attribute.Media;
     WEARE_MOOS: Attribute.Relation<
       'api::footer-contact.footer-contact',
       'oneToMany',
@@ -1351,6 +1348,9 @@ export interface ApiFooterContactFooterContact extends Schema.CollectionType {
       'manyToOne',
       'api::footer.footer'
     >;
+    fontawsome_phone_icon_name: Attribute.String;
+    fontawsome_email_icon_name: Attribute.String;
+    fontawsome_copyright_icon_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1382,13 +1382,13 @@ export interface ApiFooterContactWeAreFooterContactWeAre
     draftAndPublish: true;
   };
   attributes: {
-    icon: Attribute.Media;
     link: Attribute.String;
     footer_contact: Attribute.Relation<
       'api::footer-contact-we-are.footer-contact-we-are',
       'manyToOne',
       'api::footer-contact.footer-contact'
     >;
+    fontawsome_icon_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
