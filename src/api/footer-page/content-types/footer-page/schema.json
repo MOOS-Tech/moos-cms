@@ -20,6 +20,9 @@
       "relation": "manyToOne",
       "target": "api::footer.footer",
       "inversedBy": "footer_pages"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
