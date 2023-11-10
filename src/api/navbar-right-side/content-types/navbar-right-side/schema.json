@@ -18,11 +18,8 @@
     "url": {
       "type": "string"
     },
-    "common_navbar": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::navbar.navbar",
-      "inversedBy": "navbar_right_sides"
+    "type": {
+      "type": "string"
     }
   }
 }

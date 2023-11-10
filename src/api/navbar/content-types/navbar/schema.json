@@ -21,11 +21,8 @@
       "target": "api::navbar-sub-topic.navbar-sub-topic",
       "mappedBy": "navbar"
     },
-    "navbar_right_sides": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::navbar-right-side.navbar-right-side",
-      "mappedBy": "common_navbar"
+    "url": {
+      "type": "string"
     }
   }
 }
