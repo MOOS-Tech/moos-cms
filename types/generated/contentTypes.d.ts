@@ -1707,13 +1707,14 @@ export interface ApiNavbarSubTopicNavbarSubTopic extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    sub_topics: Attribute.String;
+    name: Attribute.String;
     navbar: Attribute.Relation<
       'api::navbar-sub-topic.navbar-sub-topic',
       'manyToOne',
       'api::navbar.navbar'
     >;
     font_awsome_Icon_name: Attribute.String;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
