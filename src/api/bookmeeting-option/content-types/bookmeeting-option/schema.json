@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookmeeting_options",
+  "info": {
+    "singularName": "bookmeeting-option",
+    "pluralName": "bookmeeting-options",
+    "displayName": "0_common / BookMeeting /option",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "options": {
+      "type": "string"
+    }
+  }
+}
