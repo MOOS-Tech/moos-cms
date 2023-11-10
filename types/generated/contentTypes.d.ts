@@ -715,6 +715,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -724,7 +725,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
     Paragraph: Attribute.String;
     underline_word: Attribute.String;
     url: Attribute.String;
-    icon: Attribute.Media;
+    font_awsome_Icon_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1720,7 +1721,7 @@ export interface ApiNavbarSubTopicNavbarSubTopic extends Schema.CollectionType {
       'manyToOne',
       'api::navbar.navbar'
     >;
-    icon: Attribute.Media;
+    font_awsome_Icon_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
