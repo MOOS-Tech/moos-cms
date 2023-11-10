@@ -778,6 +778,38 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   };
 }
 
+export interface ApiBookmeetingOptionBookmeetingOption
+  extends Schema.CollectionType {
+  collectionName: 'bookmeeting_options';
+  info: {
+    singularName: 'bookmeeting-option';
+    pluralName: 'bookmeeting-options';
+    displayName: '0_common / BookMeeting /option';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    options: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bookmeeting-option.bookmeeting-option',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bookmeeting-option.bookmeeting-option',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation
   extends Schema.CollectionType {
   collectionName: 'bp_multiple_stock_keeping_locations';
@@ -2253,6 +2285,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::banner.banner': ApiBannerBanner;
       'api::book-meeting.book-meeting': ApiBookMeetingBookMeeting;
+      'api::bookmeeting-option.bookmeeting-option': ApiBookmeetingOptionBookmeetingOption;
       'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location': ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation;
       'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway': ApiBpMultipleStockKeepingLocationMooswayBpMultipleStockKeepingLocationMoosway;
       'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway': ApiBpMultipleStockKeepingLocationOldwayBpMultipleStockKeepingLocationOldway;
