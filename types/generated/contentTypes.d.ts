@@ -709,40 +709,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'banner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    boldText: Attribute.String;
-    Paragraph: Attribute.String;
-    underline_word: Attribute.String;
-    url: Attribute.String;
-    icon: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   collectionName: 'book_meetings';
   info: {
@@ -801,9 +767,6 @@ export interface ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation
       'oneToMany',
       'api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway'
     >;
-    pill_image: Attribute.Media;
-    percentage: Attribute.String;
-    percentage_description: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2213,7 +2176,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
-      'api::banner.banner': ApiBannerBanner;
       'api::book-meeting.book-meeting': ApiBookMeetingBookMeeting;
       'api::bp-multiple-stock-keeping-location.bp-multiple-stock-keeping-location': ApiBpMultipleStockKeepingLocationBpMultipleStockKeepingLocation;
       'api::bp-multiple-stock-keeping-location-moosway.bp-multiple-stock-keeping-location-moosway': ApiBpMultipleStockKeepingLocationMooswayBpMultipleStockKeepingLocationMoosway;
