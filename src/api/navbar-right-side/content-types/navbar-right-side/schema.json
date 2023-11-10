@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbar_right_sides",
+  "info": {
+    "singularName": "navbar-right-side",
+    "pluralName": "navbar-right-sides",
+    "displayName": "0.1.3_common / navbar / rightSide",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "common_navbar": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::navbar.navbar",
+      "inversedBy": "navbar_right_sides"
+    }
+  }
+}

@@ -1628,7 +1628,7 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
   info: {
     singularName: 'navbar';
     pluralName: 'navbars';
-    displayName: '0_comon / navbar';
+    displayName: '0.1.1_common / navbar';
     description: '';
   };
   options: {
@@ -1640,6 +1640,11 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
       'api::navbar.navbar',
       'oneToMany',
       'api::navbar-sub-topic.navbar-sub-topic'
+    >;
+    navbar_right_sides: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToMany',
+      'api::navbar-right-side.navbar-right-side'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1659,12 +1664,50 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
   };
 }
 
+export interface ApiNavbarRightSideNavbarRightSide
+  extends Schema.CollectionType {
+  collectionName: 'navbar_right_sides';
+  info: {
+    singularName: 'navbar-right-side';
+    pluralName: 'navbar-right-sides';
+    displayName: '0.1.3_common / navbar / rightSide';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+    common_navbar: Attribute.Relation<
+      'api::navbar-right-side.navbar-right-side',
+      'manyToOne',
+      'api::navbar.navbar'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar-right-side.navbar-right-side',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar-right-side.navbar-right-side',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNavbarSubTopicNavbarSubTopic extends Schema.CollectionType {
   collectionName: 'navbar_sub_topics';
   info: {
     singularName: 'navbar-sub-topic';
     pluralName: 'navbar-sub-topics';
-    displayName: '0_comon / navbar / subTopic';
+    displayName: '0.1.2_common / navbar / subTopic';
     description: '';
   };
   options: {
@@ -2239,6 +2282,7 @@ declare module '@strapi/types' {
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::moosway.moosway': ApiMooswayMoosway;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::navbar-right-side.navbar-right-side': ApiNavbarRightSideNavbarRightSide;
       'api::navbar-sub-topic.navbar-sub-topic': ApiNavbarSubTopicNavbarSubTopic;
       'api::oldway.oldway': ApiOldwayOldway;
       'api::our-company-page-job-vacancy.our-company-page-job-vacancy': ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy;
