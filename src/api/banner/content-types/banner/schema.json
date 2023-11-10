@@ -24,7 +24,7 @@
     "url": {
       "type": "string"
     },
-    "Icon_name": {
+    "font_awsome_Icon_name": {
       "type": "string"
     }
   }
