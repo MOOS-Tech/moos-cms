@@ -27,6 +27,20 @@
       "relation": "oneToMany",
       "target": "api::bp-multiple-stock-keeping-location-oldway.bp-multiple-stock-keeping-location-oldway",
       "mappedBy": "bp_location"
+    },
+    "pill_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "percentage": {
+      "type": "string"
+    },
+    "percentage_description": {
+      "type": "string"
     }
   }
 }

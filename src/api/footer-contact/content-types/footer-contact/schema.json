@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_contacts",
+  "info": {
+    "singularName": "footer-contact",
+    "pluralName": "footer-contacts",
+    "displayName": "0.2.4_common / footer / contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "telephone_number": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "phone_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "email_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "copyright_icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "WEARE_MOOS": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::footer-contact-we-are.footer-contact-we-are",
+      "mappedBy": "footer_contact"
+    },
+    "footer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::footer.footer",
+      "inversedBy": "footer_contacts"
+    }
+  }
+}

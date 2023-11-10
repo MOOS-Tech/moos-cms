@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_pages",
+  "info": {
+    "singularName": "footer-page",
+    "pluralName": "footer-pages",
+    "displayName": "0.2.3_Common / footer / page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "page": {
+      "type": "string"
+    },
+    "footer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::footer.footer",
+      "inversedBy": "footer_pages"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

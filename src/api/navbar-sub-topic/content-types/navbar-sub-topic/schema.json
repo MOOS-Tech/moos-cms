@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbar_sub_topics",
+  "info": {
+    "singularName": "navbar-sub-topic",
+    "pluralName": "navbar-sub-topics",
+    "displayName": "0_comon / navbar / subTopic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sub_topics": {
+      "type": "string"
+    },
+    "navbar": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::navbar.navbar",
+      "inversedBy": "navbar_sub_topics"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
