@@ -4,7 +4,7 @@
   "info": {
     "singularName": "navbar",
     "pluralName": "navbars",
-    "displayName": "0_comon / navbar",
+    "displayName": "0.1.1_common / navbar",
     "description": ""
   },
   "options": {
@@ -20,6 +20,12 @@
       "relation": "oneToMany",
       "target": "api::navbar-sub-topic.navbar-sub-topic",
       "mappedBy": "navbar"
+    },
+    "navbar_right_sides": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navbar-right-side.navbar-right-side",
+      "mappedBy": "common_navbar"
     }
   }
 }
