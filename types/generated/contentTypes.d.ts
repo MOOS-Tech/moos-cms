@@ -1642,11 +1642,7 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
       'oneToMany',
       'api::navbar-sub-topic.navbar-sub-topic'
     >;
-    navbar_right_sides: Attribute.Relation<
-      'api::navbar.navbar',
-      'oneToMany',
-      'api::navbar-right-side.navbar-right-side'
-    >;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1680,11 +1676,7 @@ export interface ApiNavbarRightSideNavbarRightSide
   attributes: {
     name: Attribute.String;
     url: Attribute.String;
-    common_navbar: Attribute.Relation<
-      'api::navbar-right-side.navbar-right-side',
-      'manyToOne',
-      'api::navbar.navbar'
-    >;
+    type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
