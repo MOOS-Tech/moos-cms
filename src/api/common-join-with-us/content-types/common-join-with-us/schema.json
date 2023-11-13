@@ -28,13 +28,9 @@
       "type": "string",
       "required": true
     },
-    "upload_resume": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "files"
-      ]
+    "resume_link": {
+      "type": "string",
+      "required": true
     }
   }
 }
