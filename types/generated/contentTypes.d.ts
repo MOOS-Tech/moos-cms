@@ -1289,7 +1289,7 @@ export interface ApiCommonJoinWithUsCommonJoinWithUs
     name: Attribute.String & Attribute.Required;
     email: Attribute.Email & Attribute.Required;
     linkedIn_profile: Attribute.String & Attribute.Required;
-    upload_resume: Attribute.Media;
+    resume_link: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
