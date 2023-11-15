@@ -9,7 +9,7 @@ console.log(result)
                 subject:" Thank You for Submitting Your CV", 
                 text: ` cv url  =  ${result.resume_link} , position = ${result.position} , linkedIn_profile = ${result.linkedIn_profile}
                 
-                Dear ${result.email},
+                Dear ${result.name},
                 
                     Thank you for submitting your CV for the ${result.position} position at MOOS. We appreciate your interest in joining our team.
                 Your application is important to us, and we will carefully review your qualifications to determine if your skills and experience match our requirements. If we find that your profile aligns with what we are looking for, we will contact you to discuss the next steps in the hiring process.
