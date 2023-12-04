@@ -20,7 +20,7 @@
     "@strapi/plugin-users-permissions": "4.15.0",
     "@strapi/provider-upload-aws-s3": "^4.15.0",
     "@strapi/strapi": "4.15.0",
-    "better-sqlite3": "9.0.0",
+    "better-sqlite3": "9.2.0",
     "pg": "^8.11.3",
     "reselect": "^4.1.8"
   },
