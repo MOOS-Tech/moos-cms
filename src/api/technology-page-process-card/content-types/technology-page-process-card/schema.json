@@ -25,6 +25,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "tech_flow_text": {
+      "type": "string"
     }
   }
 }
