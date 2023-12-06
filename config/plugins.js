@@ -34,4 +34,29 @@ module.exports = ({ env }) => ({
             },
         },
     },
+    // email: {
+    //     provider: 'amazon-ses',
+    //     providerOptions: {
+    //       key: env('AWS_ACCESS_KEY_ID'),
+    //       secret:  env('AWS_ACCESS_SECRET'),
+    //       amazon: `https://email.eu-west-1.amazonaws.com`
+    //     },
+    //     settings: {
+    //       defaultFrom: 'info@moos.nu',
+    //       defaultReplyTo: 'info@moos.nu'
+    //     }
+    //   },
+    email: {
+        config: {
+          provider: 'sendgrid',
+          providerOptions: {
+            apiKey:env('API_KEY'),
+          },
+          settings: {
+            defaultFrom: 'dhanushka.a@blackvt.com',
+            defaultReplyTo: 'dhanushka.a@blackvt.com',
+            testAddress: 'dhanushka.a@blackvt.com',
+          },
+        },
+      },
 });

@@ -2209,6 +2209,7 @@ export interface ApiTechnologyPageProcessCardTechnologyPageProcessCard
     title: Attribute.String;
     sub_title: Attribute.Text;
     imageUrl: Attribute.Media;
+    tech_flow_text: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
