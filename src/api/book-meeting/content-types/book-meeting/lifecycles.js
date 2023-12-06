@@ -1,7 +1,7 @@
 module.exports = {
     async afterCreate(event){
         const { result } = event;
-console.log(result)
+
         try{
             await strapi.plugins['email'].services.email.send({
                 to:`${result.email}`,
