@@ -1,35 +1,60 @@
 module.exports = {
-    async afterCreate(event){
+    async afterCreate(event) {
         const { result } = event;
-
-        try{
+        try {
             await strapi.plugins['email'].services.email.send({
-                to:`${result.email}`,
-                from:"dhanushka.a@blackvt.com",
-                subject:"Thank You for Booking a Meeting", 
-                text: `
-                
-                Dear ${result.name},
-                
-                Thank you for scheduling a meeting with us. We appreciate your time and look forward to discussing [meeting purpose] with you.
-                The details of the meeting are as follows:
-                
-                Date: [Meeting Date]
-                Time: [Meeting Time]
-                Location: [Meeting Location or Online Link]
-        
-                If you have any questions or need to reschedule, please feel free to contact us at [your contact email or phone number].
-        
-                We are excited about the opportunity to connect with you and discuss how we can work together.
-        
-                Best regards,
-                [Your Name]
-                [Your Title]
-                MOOS
-                `
+                to: `dhanushka.a@blackvt.com`,
+                from: "dhanushka.a@blackvt.com",
+                subject: "You received a new message.",
+                html: `
+                <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>New Message Received</title>
+                    <style>
+                        body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #F4F4F4;
+                        }
+                        .container {
+                        max-width: 600px;
+                        margin: 20px auto;
+                        padding: 20px;
+                        background-color: #fff;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        }
+                        h2 {
+                        color: #333;
+                        }
+                        p {
+                        color: #555;
+                        }
+                    </style>
+                    </head>
+                    <body>
+                    <div class="container">
+                        <h2>New Message Received</h2>
+                        <p>We have received a new message. Kindly review the details on your CMS dashboard.</p>
+                        <ul>
+                        <li><strong>Name:</strong> ${result.name}</li>
+                        <li><strong>Email:</strong> <a href="mailto:${result.email}">${result.email}</a></li>
+                        <li><strong>Request demonstration:</strong> ${result.request_demonstration}</li>
+                        <li><strong>Message:</strong> ${result.message}</li>
+                        </ul>
+                        <p>Thank you!</p>
+                        <p>Best regards,<br>MOOS</p>
+                    </div>
+                    </body>
+                </html>`
+
             })
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     }

@@ -1,13 +1,3 @@
-function decrypt(encryptedText, key) {
-    const decodedText = atob(encryptedText);
-    let result = '';
-    for (let i = 0; i < decodedText.length; i++) {
-      const charCode = decodedText.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-      result += String.fromCharCode(charCode);
-    }
-    return result;
- }
-const val = decrypt("NilxBQMVNgEyGQooKwc2GikDMEMLCREMJEBvXRcyNDtsOlFJIjttOykzNEMMPj1BUA0wOQxIETcuAw0cKwg9CjA2PEMO",'en_key') 
 module.exports = ({ env }) => ({
     upload: {
         config: {
@@ -60,7 +50,7 @@ module.exports = ({ env }) => ({
         config: {
           provider: 'sendgrid',
           providerOptions: {
-            apiKey:val,
+            apiKey:'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',
           },
           settings: {
             defaultFrom: 'dhanushka.a@blackvt.com',
