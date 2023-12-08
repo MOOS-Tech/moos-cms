@@ -749,7 +749,7 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   info: {
     singularName: 'book-meeting';
     pluralName: 'book-meetings';
-    displayName: '0_ common / BookMeeting';
+    displayName: '0_ common / contactus';
     description: '';
   };
   options: {
