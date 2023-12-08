@@ -1546,6 +1546,41 @@ export interface ApiImageImage extends Schema.CollectionType {
   };
 }
 
+export interface ApiJobApplicationJobApplication extends Schema.CollectionType {
+  collectionName: 'job_applications';
+  info: {
+    singularName: 'job-application';
+    pluralName: 'job-applications';
+    displayName: 'jobApplication';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    position: Attribute.String;
+    name: Attribute.String;
+    email: Attribute.Email;
+    linkedin_profile: Attribute.String;
+    resume_link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::job-application.job-application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::job-application.job-application',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
   collectionName: 'learn_more_cards';
   info: {
@@ -2306,6 +2341,7 @@ declare module '@strapi/types' {
       'api::footer-page.footer-page': ApiFooterPageFooterPage;
       'api::footer-term-and-condition.footer-term-and-condition': ApiFooterTermAndConditionFooterTermAndCondition;
       'api::image.image': ApiImageImage;
+      'api::job-application.job-application': ApiJobApplicationJobApplication;
       'api::learn-more-card.learn-more-card': ApiLearnMoreCardLearnMoreCard;
       'api::learn-more-card-array.learn-more-card-array': ApiLearnMoreCardArrayLearnMoreCardArray;
       'api::moosway.moosway': ApiMooswayMoosway;
