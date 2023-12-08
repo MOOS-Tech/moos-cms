@@ -749,7 +749,7 @@ export interface ApiBookMeetingBookMeeting extends Schema.CollectionType {
   info: {
     singularName: 'book-meeting';
     pluralName: 'book-meetings';
-    displayName: '0_ common / BookMeeting';
+    displayName: '0_ common / contactus';
     description: '';
   };
   options: {
@@ -1820,7 +1820,7 @@ export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
       'oneToMany',
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification'
     >;
-    link: Attribute.String;
+    pdf_file: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
