@@ -1820,7 +1820,7 @@ export interface ApiOurCompanyPageJobVacancyOurCompanyPageJobVacancy
       'oneToMany',
       'api::our-company-page-job-vacancy-qualification.our-company-page-job-vacancy-qualification'
     >;
-    link: Attribute.String;
+    pdf_file: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
