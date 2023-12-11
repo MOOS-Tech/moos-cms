@@ -1308,6 +1308,86 @@ export interface ApiCommonJoinWithUsCommonJoinWithUs
   };
 }
 
+export interface ApiDistributedStockTitleCardDistributedStockTitleCard
+  extends Schema.CollectionType {
+  collectionName: 'distributed_stock_title_cards';
+  info: {
+    singularName: 'distributed-stock-title-card';
+    pluralName: 'distributed-stock-title-cards';
+    displayName: '5.1_business / distributed_stock / titleCard';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_topic: Attribute.String;
+    image_url: Attribute.Media;
+    common_title: Attribute.Relation<
+      'api::distributed-stock-title-card.distributed-stock-title-card',
+      'oneToOne',
+      'api::title.title'
+    >;
+    point: Attribute.Relation<
+      'api::distributed-stock-title-card.distributed-stock-title-card',
+      'oneToMany',
+      'api::distributed-stock-titlecard-point.distributed-stock-titlecard-point'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::distributed-stock-title-card.distributed-stock-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::distributed-stock-title-card.distributed-stock-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDistributedStockTitlecardPointDistributedStockTitlecardPoint
+  extends Schema.CollectionType {
+  collectionName: 'distributed_stock_titlecard_points';
+  info: {
+    singularName: 'distributed-stock-titlecard-point';
+    pluralName: 'distributed-stock-titlecard-points';
+    displayName: '5.1.1_business /distributed_stock / Titlecard / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    point: Attribute.String & Attribute.Required;
+    card: Attribute.Relation<
+      'api::distributed-stock-titlecard-point.distributed-stock-titlecard-point',
+      'manyToOne',
+      'api::distributed-stock-title-card.distributed-stock-title-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::distributed-stock-titlecard-point.distributed-stock-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::distributed-stock-titlecard-point.distributed-stock-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.CollectionType {
   collectionName: 'footers';
   info: {
@@ -2330,6 +2410,86 @@ export interface ApiTitleTitle extends Schema.CollectionType {
   };
 }
 
+export interface ApiWarehousingOpsTitleCardWarehousingOpsTitleCard
+  extends Schema.CollectionType {
+  collectionName: 'warehousing_ops_title_cards';
+  info: {
+    singularName: 'warehousing-ops-title-card';
+    pluralName: 'warehousing-ops-title-cards';
+    displayName: '4.1_business / Warehousing_Ops / titleCard';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sub_topic: Attribute.String;
+    main_title: Attribute.Relation<
+      'api::warehousing-ops-title-card.warehousing-ops-title-card',
+      'oneToOne',
+      'api::title.title'
+    >;
+    image_url: Attribute.Media;
+    point: Attribute.Relation<
+      'api::warehousing-ops-title-card.warehousing-ops-title-card',
+      'oneToMany',
+      'api::warehousing-ops-titlecard-point.warehousing-ops-titlecard-point'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warehousing-ops-title-card.warehousing-ops-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warehousing-ops-title-card.warehousing-ops-title-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWarehousingOpsTitlecardPointWarehousingOpsTitlecardPoint
+  extends Schema.CollectionType {
+  collectionName: 'warehousing_ops_titlecard_points';
+  info: {
+    singularName: 'warehousing-ops-titlecard-point';
+    pluralName: 'warehousing-ops-titlecard-points';
+    displayName: '4.1.1_business / Warehousing_Ops / Titlecard / point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    point: Attribute.String & Attribute.Required;
+    card: Attribute.Relation<
+      'api::warehousing-ops-titlecard-point.warehousing-ops-titlecard-point',
+      'manyToOne',
+      'api::warehousing-ops-title-card.warehousing-ops-title-card'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warehousing-ops-titlecard-point.warehousing-ops-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warehousing-ops-titlecard-point.warehousing-ops-titlecard-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -2363,6 +2523,8 @@ declare module '@strapi/types' {
       'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point': ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint;
       'api::card-view.card-view': ApiCardViewCardView;
       'api::common-join-with-us.common-join-with-us': ApiCommonJoinWithUsCommonJoinWithUs;
+      'api::distributed-stock-title-card.distributed-stock-title-card': ApiDistributedStockTitleCardDistributedStockTitleCard;
+      'api::distributed-stock-titlecard-point.distributed-stock-titlecard-point': ApiDistributedStockTitlecardPointDistributedStockTitlecardPoint;
       'api::footer.footer': ApiFooterFooter;
       'api::footer-contact.footer-contact': ApiFooterContactFooterContact;
       'api::footer-contact-we-are.footer-contact-we-are': ApiFooterContactWeAreFooterContactWeAre;
@@ -2391,6 +2553,8 @@ declare module '@strapi/types' {
       'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;
       'api::technology-page-process-card.technology-page-process-card': ApiTechnologyPageProcessCardTechnologyPageProcessCard;
       'api::title.title': ApiTitleTitle;
+      'api::warehousing-ops-title-card.warehousing-ops-title-card': ApiWarehousingOpsTitleCardWarehousingOpsTitleCard;
+      'api::warehousing-ops-titlecard-point.warehousing-ops-titlecard-point': ApiWarehousingOpsTitlecardPointWarehousingOpsTitlecardPoint;
     }
   }
 }

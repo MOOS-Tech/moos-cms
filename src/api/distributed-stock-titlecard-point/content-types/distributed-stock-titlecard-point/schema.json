@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "distributed_stock_titlecard_points",
+  "info": {
+    "singularName": "distributed-stock-titlecard-point",
+    "pluralName": "distributed-stock-titlecard-points",
+    "displayName": "5.1.1_business /distributed_stock / Titlecard / point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "point": {
+      "type": "string",
+      "required": true
+    },
+    "card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::distributed-stock-title-card.distributed-stock-title-card",
+      "inversedBy": "point"
+    }
+  }
+}
