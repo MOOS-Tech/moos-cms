@@ -5,14 +5,14 @@ module.exports = {
             await strapi.plugins['email'].services.email.send({
                 to: `dhanushka.a@blackvt.com`,
                 from: "dhanushka.a@blackvt.com",
-                subject: "You received a new message.",
+                subject: "You received a new job application.",
                 html: `
                 <!DOCTYPE html>
                     <html lang="en">
                     <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>New Message Received</title>
+                    <title>New Job Application Received</title>
                     <style>
                         body {
                         font-family: Arial, sans-serif;
@@ -38,13 +38,14 @@ module.exports = {
                     </head>
                     <body>
                     <div class="container">
-                        <h2>New Message Received</h2>
-                        <p>We have received a new message. Kindly review the details on your CMS dashboard.</p>
+                        <h2>New Job Application Received</h2>
+                        <p>We have received a new job application. Kindly review the details on your CMS dashboard. Below is a summary of the applicant's information:</p>
                         <ul>
                         <li><strong>Name:</strong> ${result.name}</li>
+                        <li><strong>Position:</strong> ${result.position}</li>
                         <li><strong>Email:</strong> <a href="mailto:${result.email}">${result.email}</a></li>
-                        <li><strong>Request demonstration:</strong> ${result.request_demonstration}</li>
-                        <li><strong>Message:</strong> ${result.message}</li>
+                        <li><strong>LinkedIn:</strong> <a href="${result.linkedin_profile}" target="_blank">linkedin</a></li>
+                        <li><strong>Resume:</strong> <a href="${result.resume_link}" target="_blank">resume</a></li>
                         </ul>
                         <p>Thank you!</p>
                         <p>Best regards,<br>MOOS</p>

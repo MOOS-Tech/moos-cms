@@ -50,7 +50,7 @@ module.exports = ({ env }) => ({
         config: {
           provider: 'sendgrid',
           providerOptions: {
-            apiKey:env('API_KEY'),
+            apiKey:'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',
           },
           settings: {
             defaultFrom: 'dhanushka.a@blackvt.com',

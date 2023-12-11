@@ -1173,17 +1173,17 @@ export interface ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetai
   };
   attributes: {
     sub_topic: Attribute.String;
-    main_title: Attribute.Relation<
-      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
-      'manyToOne',
-      'api::title.title'
-    >;
     points: Attribute.Relation<
       'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
       'oneToMany',
       'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point'
     >;
     image_url: Attribute.Media & Attribute.Required;
+    common_title: Attribute.Relation<
+      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card',
+      'oneToOne',
+      'api::title.title'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2114,6 +2114,39 @@ export interface ApiQuoteQuote extends Schema.CollectionType {
   };
 }
 
+export interface ApiSectionSubtopicSectionSubtopic
+  extends Schema.CollectionType {
+  collectionName: 'section_subtopics';
+  info: {
+    singularName: 'section-subtopic';
+    pluralName: 'section-subtopics';
+    displayName: '0_ common / section_subtopic';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    section_name: Attribute.String & Attribute.Required;
+    topic: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-subtopic.section-subtopic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-subtopic.section-subtopic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -2279,11 +2312,6 @@ export interface ApiTitleTitle extends Schema.CollectionType {
     boldText: Attribute.String;
     Paragraph: Attribute.String;
     BelongTo: Attribute.String & Attribute.Required & Attribute.Unique;
-    business_page_unmanage_retail_title_cards: Attribute.Relation<
-      'api::title.title',
-      'oneToMany',
-      'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2357,6 +2385,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::quote.quote': ApiQuoteQuote;
+      'api::section-subtopic.section-subtopic': ApiSectionSubtopicSectionSubtopic;
       'api::service.service': ApiServiceService;
       'api::service-card-body.service-card-body': ApiServiceCardBodyServiceCardBody;
       'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;

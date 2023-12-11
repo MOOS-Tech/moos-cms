@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "section_subtopics",
+  "info": {
+    "singularName": "section-subtopic",
+    "pluralName": "section-subtopics",
+    "displayName": "0_ common / section_subtopic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_name": {
+      "type": "string",
+      "required": true
+    },
+    "topic": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
