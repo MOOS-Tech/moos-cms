@@ -1093,37 +1093,6 @@ export interface ApiBpWarehousingOpsFlowchartOldwayBpWarehousingOpsFlowchartOldw
   };
 }
 
-export interface ApiBusinessPageTitleBusinessPageTitle
-  extends Schema.CollectionType {
-  collectionName: 'business_page_titles';
-  info: {
-    singularName: 'business-page-title';
-    pluralName: 'business-page-titles';
-    displayName: '3.0_business / flowcharts / Title';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::business-page-title.business-page-title',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::business-page-title.business-page-title',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted
   extends Schema.CollectionType {
   collectionName: 'business_page_umnamage_retail_get_starteds';
@@ -2517,7 +2486,6 @@ declare module '@strapi/types' {
       'api::bp-warehousing-ops-flowchart.bp-warehousing-ops-flowchart': ApiBpWarehousingOpsFlowchartBpWarehousingOpsFlowchart;
       'api::bp-warehousing-ops-flowchart-moosway.bp-warehousing-ops-flowchart-moosway': ApiBpWarehousingOpsFlowchartMooswayBpWarehousingOpsFlowchartMoosway;
       'api::bp-warehousing-ops-flowchart-oldway.bp-warehousing-ops-flowchart-oldway': ApiBpWarehousingOpsFlowchartOldwayBpWarehousingOpsFlowchartOldway;
-      'api::business-page-title.business-page-title': ApiBusinessPageTitleBusinessPageTitle;
       'api::business-page-umnamage-retail-get-started.business-page-umnamage-retail-get-started': ApiBusinessPageUmnamageRetailGetStartedBusinessPageUmnamageRetailGetStarted;
       'api::business-page-unmanage-retail-title-card.business-page-unmanage-retail-title-card': ApiBusinessPageUnmanageRetailTitleCardBusinessPageUnmanageRetailTitleCard;
       'api::businesspage-umnamage-retail-titlecard-point.businesspage-umnamage-retail-titlecard-point': ApiBusinesspageUmnamageRetailTitlecardPointBusinesspageUmnamageRetailTitlecardPoint;
