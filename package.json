@@ -24,7 +24,7 @@
     "@strapi/strapi": "4.15.0",
     "better-sqlite3": "9.0.0",
     "pg": "^8.11.3",
-    "reselect": "^4.1.8",
+    "reselect": "^5.0.1",
     "sharp": "^0.32.6"
   },
   "strapi": {
