@@ -15,12 +15,6 @@
     "sub_topic": {
       "type": "string"
     },
-    "main_title": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::title.title",
-      "inversedBy": "business_page_unmanage_retail_title_cards"
-    },
     "points": {
       "type": "relation",
       "relation": "oneToMany",
@@ -28,12 +22,17 @@
       "mappedBy": "card"
     },
     "image_url": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "common_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::title.title"
     }
   }
 }
