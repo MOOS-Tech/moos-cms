@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "warehousing_ops_titlecard_points",
+  "info": {
+    "singularName": "warehousing-ops-titlecard-point",
+    "pluralName": "warehousing-ops-titlecard-points",
+    "displayName": "4.1.1_business / Warehousing_Ops / Titlecard / point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "point": {
+      "type": "string",
+      "required": true
+    },
+    "card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::warehousing-ops-title-card.warehousing-ops-title-card",
+      "inversedBy": "point"
+    }
+  }
+}
