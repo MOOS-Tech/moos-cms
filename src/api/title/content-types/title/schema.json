@@ -20,7 +20,7 @@
       "type": "string"
     },
     "Paragraph": {
-      "type": "string"
+      "type": "text"
     },
     "BelongTo": {
       "type": "string",
