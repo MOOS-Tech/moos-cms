@@ -1531,7 +1531,7 @@ export interface ApiFooterTermAndConditionFooterTermAndCondition
   info: {
     singularName: 'footer-term-and-condition';
     pluralName: 'footer-term-and-conditions';
-    displayName: '0.2.2_Common / footer / termAndCondition ';
+    displayName: '0.2.2_Common / footer / block1  ';
     description: '';
   };
   options: {
@@ -1545,6 +1545,7 @@ export interface ApiFooterTermAndConditionFooterTermAndCondition
     >;
     name: Attribute.String;
     url_link: Attribute.String;
+    content: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

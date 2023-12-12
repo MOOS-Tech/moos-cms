@@ -4,7 +4,7 @@
   "info": {
     "singularName": "footer-term-and-condition",
     "pluralName": "footer-term-and-conditions",
-    "displayName": "0.2.2_Common / footer / termAndCondition ",
+    "displayName": "0.2.2_Common / footer / block1  ",
     "description": ""
   },
   "options": {
@@ -23,6 +23,9 @@
     },
     "url_link": {
       "type": "string"
+    },
+    "content": {
+      "type": "text"
     }
   }
 }
