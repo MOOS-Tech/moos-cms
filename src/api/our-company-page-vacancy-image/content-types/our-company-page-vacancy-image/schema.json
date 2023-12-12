@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_company_page_vacancy_images",
+  "info": {
+    "singularName": "our-company-page-vacancy-image",
+    "pluralName": "our-company-page-vacancy-images",
+    "displayName": "7.2.2_OurCompanyPage / vacancy / image",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image_url": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
