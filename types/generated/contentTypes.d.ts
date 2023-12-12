@@ -2076,6 +2076,38 @@ export interface ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint
   };
 }
 
+export interface ApiOurCompanyPageVacancyImageOurCompanyPageVacancyImage
+  extends Schema.CollectionType {
+  collectionName: 'our_company_page_vacancy_images';
+  info: {
+    singularName: 'our-company-page-vacancy-image';
+    pluralName: 'our-company-page-vacancy-images';
+    displayName: '7.2.2_OurCompanyPage / vacancy / image';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image_url: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-company-page-vacancy-image.our-company-page-vacancy-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-company-page-vacancy-image.our-company-page-vacancy-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -2592,6 +2624,7 @@ declare module '@strapi/types' {
       'api::our-company-page-meet-our-team.our-company-page-meet-our-team': ApiOurCompanyPageMeetOurTeamOurCompanyPageMeetOurTeam;
       'api::our-company-page-title-card.our-company-page-title-card': ApiOurCompanyPageTitleCardOurCompanyPageTitleCard;
       'api::our-company-page-title-point.our-company-page-title-point': ApiOurCompanyPageTitlePointOurCompanyPageTitlePoint;
+      'api::our-company-page-vacancy-image.our-company-page-vacancy-image': ApiOurCompanyPageVacancyImageOurCompanyPageVacancyImage;
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::quote.quote': ApiQuoteQuote;
