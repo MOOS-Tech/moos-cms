@@ -1650,6 +1650,7 @@ export interface ApiLearnMoreCardLearnMoreCard extends Schema.CollectionType {
       'oneToMany',
       'api::learn-more-card-array.learn-more-card-array'
     >;
+    button_name: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

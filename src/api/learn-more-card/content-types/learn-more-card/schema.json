@@ -25,6 +25,10 @@
       "relation": "oneToMany",
       "target": "api::learn-more-card-array.learn-more-card-array",
       "mappedBy": "learn_more_card"
+    },
+    "button_name": {
+      "type": "string",
+      "required": true
     }
   }
 }
