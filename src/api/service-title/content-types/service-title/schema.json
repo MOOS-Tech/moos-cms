@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_titles",
+  "info": {
+    "singularName": "service-title",
+    "pluralName": "service-titles",
+    "displayName": "2.0_service / service_title",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "ImageUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "common_title": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::title.title"
+    },
+    "points": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::services-title-point.services-title-point",
+      "mappedBy": "card"
+    }
+  }
+}
