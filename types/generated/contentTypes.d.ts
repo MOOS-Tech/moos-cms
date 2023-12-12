@@ -2286,7 +2286,7 @@ export interface ApiServiceTitleServiceTitle extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    description: Attribute.String;
+    description: Attribute.Text;
     ImageUrl: Attribute.Media;
     common_title: Attribute.Relation<
       'api::service-title.service-title',
@@ -2439,7 +2439,7 @@ export interface ApiTitleTitle extends Schema.CollectionType {
   attributes: {
     CommonTitle: Attribute.String;
     boldText: Attribute.String;
-    Paragraph: Attribute.String;
+    Paragraph: Attribute.Text;
     BelongTo: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
