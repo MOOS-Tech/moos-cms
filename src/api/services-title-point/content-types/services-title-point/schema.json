@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_title_points",
+  "info": {
+    "singularName": "services-title-point",
+    "pluralName": "services-title-points",
+    "displayName": "2.0.1_Services / Title / Point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bullet_point": {
+      "type": "string"
+    },
+    "card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-title.service-title",
+      "inversedBy": "points"
+    }
+  }
+}

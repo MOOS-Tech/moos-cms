@@ -2274,6 +2274,85 @@ export interface ApiServiceCardBodyServiceCardBody
   };
 }
 
+export interface ApiServiceTitleServiceTitle extends Schema.CollectionType {
+  collectionName: 'service_titles';
+  info: {
+    singularName: 'service-title';
+    pluralName: 'service-titles';
+    displayName: '2.0_service / service_title';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.String;
+    ImageUrl: Attribute.Media;
+    common_title: Attribute.Relation<
+      'api::service-title.service-title',
+      'oneToOne',
+      'api::title.title'
+    >;
+    points: Attribute.Relation<
+      'api::service-title.service-title',
+      'oneToMany',
+      'api::services-title-point.services-title-point'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-title.service-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-title.service-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServicesTitlePointServicesTitlePoint
+  extends Schema.CollectionType {
+  collectionName: 'services_title_points';
+  info: {
+    singularName: 'services-title-point';
+    pluralName: 'services-title-points';
+    displayName: '2.0.1_Services / Title / Point';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bullet_point: Attribute.String;
+    card: Attribute.Relation<
+      'api::services-title-point.services-title-point',
+      'manyToOne',
+      'api::service-title.service-title'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::services-title-point.services-title-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::services-title-point.services-title-point',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnologyPageTechnologyPage extends Schema.CollectionType {
   collectionName: 'technology_pages';
   info: {
@@ -2519,6 +2598,8 @@ declare module '@strapi/types' {
       'api::section-subtopic.section-subtopic': ApiSectionSubtopicSectionSubtopic;
       'api::service.service': ApiServiceService;
       'api::service-card-body.service-card-body': ApiServiceCardBodyServiceCardBody;
+      'api::service-title.service-title': ApiServiceTitleServiceTitle;
+      'api::services-title-point.services-title-point': ApiServicesTitlePointServicesTitlePoint;
       'api::technology-page.technology-page': ApiTechnologyPageTechnologyPage;
       'api::technology-page-process-card.technology-page-process-card': ApiTechnologyPageProcessCardTechnologyPageProcessCard;
       'api::title.title': ApiTitleTitle;
