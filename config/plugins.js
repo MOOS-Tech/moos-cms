@@ -1,3 +1,6 @@
+
+
+
 module.exports = ({ env }) => ({
     upload: {
         config: {
@@ -50,7 +53,7 @@ module.exports = ({ env }) => ({
         config: {
           provider: 'sendgrid',
           providerOptions: {
-            apiKey:'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',
+            apiKey:env('SG_KEY'),
           },
           settings: {
             defaultFrom: 'dhanushka.a@blackvt.com',
