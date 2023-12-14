@@ -3,7 +3,7 @@ module.exports = {
         const { result } = event;
         try {
             await strapi.plugins['email'].services.email.send({
-                to: `dhanushka.a@blackvt.com`,
+                to: `info@moos.nu`,
                 from: "dhanushka.a@blackvt.com",
                 subject: "You received a new message.",
                 html: `
