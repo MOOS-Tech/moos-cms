@@ -56,9 +56,9 @@ module.exports = ({ env }) => ({
             apiKey:env('SG_KEY'),
           },
           settings: {
-            defaultFrom: 'dhanushka.a@blackvt.com',
-            defaultReplyTo: 'dhanushka.a@blackvt.com',
-            testAddress: 'dhanushka.a@blackvt.com',
+            defaultFrom: 'Contact@moos.nu',
+            defaultReplyTo: 'Contact@moos.nu',
+            testAddress: 'Contact@moos.nu',
           },
         },
       },
